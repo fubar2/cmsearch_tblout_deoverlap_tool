@@ -10,39 +10,37 @@
             "data": {
                 "inputs": {
                     "clanin": {
-                        "id": "43a4a4c368df054f",
+                        "id": "514d697a505e3a87",
                         "src": "hda"
                     },
-                    "cmscan": "",
-                    "hmmsearch": "",
                     "in_tblout": {
-                        "id": "37b3ecf2aa60d340",
+                        "id": "b13f5fb3475ae7f1",
                         "src": "hda"
                     },
-                    "maxkeep": "",
-                    "nhmmer": "",
-                    "sortbit": ""
+                    "input_kind": "",
+                    "maxkeep": "notset",
+                    "sortbit": "notset"
                 },
                 "job": {
-                    "command_line": "perl /tmp/tmps26xj93o/job_working_directory/000/3/configs/tmpz87gmwj0 --in_tblout /tmp/tmps26xj93o/files/9/e/a/dataset_9ea1a833-04a3-4966-8d46-b369abfd6110.dat --clanin /tmp/tmps26xj93o/files/5/a/d/dataset_5ad9d878-2c95-4766-956a-af367b25b9c0.dat --overlapout /tmp/tmps26xj93o/job_working_directory/000/3/outputs/galaxy_dataset_bc49adcf-cfd2-4cbd-ab97-1cb18d9b1aa8.dat",
+                    "command_line": "perl /tmp/tmp9fleplwt/job_working_directory/000/3/configs/tmpig4wpbq_ --in_tblout /tmp/tmp9fleplwt/files/c/f/7/dataset_cf76a5d0-678d-4ba9-981c-926c0388234b.dat --clanin /tmp/tmp9fleplwt/files/9/8/4/dataset_984c444b-1e2b-4872-8669-e9ebe363c45d.dat --overlapout /tmp/tmp9fleplwt/job_working_directory/000/3/outputs/galaxy_dataset_db01e053-a51a-419e-a838-c4524ee527fe.dat  ''",
                     "command_version": "0.001",
-                    "create_time": "2023-08-11T05:27:41.781687",
+                    "create_time": "2023-08-16T02:51:10.321922",
                     "dependencies": [],
                     "exit_code": 0,
-                    "external_id": "1726694",
+                    "external_id": "969138",
                     "galaxy_version": "23.0",
-                    "history_id": "37b3ecf2aa60d340",
-                    "id": "e6c60a89f55e102f",
+                    "history_id": "b13f5fb3475ae7f1",
+                    "id": "b89968b4ebb3d1a6",
                     "inputs": {
                         "clanin": {
-                            "id": "43a4a4c368df054f",
+                            "id": "514d697a505e3a87",
                             "src": "hda",
-                            "uuid": "5ad9d878-2c95-4766-956a-af367b25b9c0"
+                            "uuid": "984c444b-1e2b-4872-8669-e9ebe363c45d"
                         },
                         "in_tblout": {
-                            "id": "37b3ecf2aa60d340",
+                            "id": "b13f5fb3475ae7f1",
                             "src": "hda",
-                            "uuid": "9ea1a833-04a3-4966-8d46-b369abfd6110"
+                            "uuid": "cf76a5d0-678d-4ba9-981c-926c0388234b"
                         }
                     },
                     "job_messages": [],
@@ -53,34 +51,32 @@
                     "output_collections": {},
                     "outputs": {
                         "overlapout": {
-                            "id": "e6c60a89f55e102f",
+                            "id": "b89968b4ebb3d1a6",
                             "src": "hda",
-                            "uuid": "bc49adcf-cfd2-4cbd-ab97-1cb18d9b1aa8"
+                            "uuid": "db01e053-a51a-419e-a838-c4524ee527fe"
                         }
                     },
                     "params": {
                         "__input_ext": "\"txt\"",
                         "chromInfo": "\"/home/ross/galaxy-release_21.01/tool-data/shared/ucsc/chrom/?.len\"",
-                        "cmscan": "\"\"",
                         "dbkey": "\"?\"",
-                        "hmmsearch": "\"\"",
-                        "maxkeep": "\"\"",
-                        "nhmmer": "\"\"",
-                        "sortbit": "\"\""
+                        "input_kind": "\"\"",
+                        "maxkeep": "\"notset\"",
+                        "sortbit": "\"notset\""
                     },
                     "state": "ok",
                     "stderr": "",
-                    "stdout": "Saved   357 hits (  614 removed) to /tmp/tmps26xj93o/files/9/e/a/dataset_9ea1a833-04a3-4966-8d46-b369abfd6110.dat.deoverlapped\nSaved tabular information on overlaps to /tmp/tmps26xj93o/job_working_directory/000/3/outputs/galaxy_dataset_bc49adcf-cfd2-4cbd-ab97-1cb18d9b1aa8.dat\n",
+                    "stdout": "Saved   357 hits (  614 removed) to /tmp/tmp9fleplwt/files/c/f/7/dataset_cf76a5d0-678d-4ba9-981c-926c0388234b.dat.deoverlapped\nSaved tabular information on overlaps to /tmp/tmp9fleplwt/job_working_directory/000/3/outputs/galaxy_dataset_db01e053-a51a-419e-a838-c4524ee527fe.dat\n",
                     "tool_id": "cmsearchtbloutdeoverlap",
                     "tool_stderr": "",
-                    "tool_stdout": "Saved   357 hits (  614 removed) to /tmp/tmps26xj93o/files/9/e/a/dataset_9ea1a833-04a3-4966-8d46-b369abfd6110.dat.deoverlapped\nSaved tabular information on overlaps to /tmp/tmps26xj93o/job_working_directory/000/3/outputs/galaxy_dataset_bc49adcf-cfd2-4cbd-ab97-1cb18d9b1aa8.dat\n",
+                    "tool_stdout": "Saved   357 hits (  614 removed) to /tmp/tmp9fleplwt/files/c/f/7/dataset_cf76a5d0-678d-4ba9-981c-926c0388234b.dat.deoverlapped\nSaved tabular information on overlaps to /tmp/tmp9fleplwt/job_working_directory/000/3/outputs/galaxy_dataset_db01e053-a51a-419e-a838-c4524ee527fe.dat\n",
                     "traceback": null,
-                    "update_time": "2023-08-11T05:28:55.339921",
+                    "update_time": "2023-08-16T02:51:15.498876",
                     "user_email": "planemo@galaxyproject.org"
                 },
                 "status": "success",
                 "test_index": 0,
-                "time_seconds": 83.80552434921265,
+                "time_seconds": 15.156449794769287,
                 "tool_id": "cmsearchtbloutdeoverlap",
                 "tool_version": "0.001"
             },

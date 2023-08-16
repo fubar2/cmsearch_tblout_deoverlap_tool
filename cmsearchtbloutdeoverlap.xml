@@ -1,6 +1,6 @@
 <tool name="cmsearchtbloutdeoverlap" id="cmsearchtbloutdeoverlap" version="0.001">
   <!--Source in git at: https://github.com/fubar2/galaxy_tf_overlay-->
-  <!--Created by toolfactory@galaxy.org at 11/08/2023 15:02:41 using the Galaxy Tool Factory.-->
+  <!--Created by toolfactory@galaxy.org at 16/08/2023 12:33:38 using the Galaxy Tool Factory.-->
   <description>Wraps https://github.com/nawrockie/cmsearch_tblout_deoverlap</description>
   <requirements>
     <requirement version="5.34.0" type="package">perl</requirement>
@@ -18,21 +18,14 @@ $in_tblout
 #end if
 --overlapout
 $overlapout
-#if $sortbit
+#if $sortbit == "set"
  --s
 #end if
-#if $nhmmer
- --nhmmer
-#end if
-#if $hmmsearch
- --hmmsearch
-#end if
-#if $cmscan
- --cmscan
-#end if
-#if $maxkeep
+#if $maxkeep == "set"
  --maxkeep
-#end if]]></command>
+#end if
+ 
+'$input_kind']]></command>
   <configfiles>
     <configfile name="runme"><![CDATA[#raw
 
@@ -966,40 +959,32 @@ sub parse_hmmsearch_tblout_line {
   <inputs>
     <param name="in_tblout" type="data" optional="false" label="Tableout input file to de-overlap" help="" format="txt" multiple="false"/>
     <param name="clanin" type="data" optional="true" label="Optional claninfo file" help="If claninfo provided, only remove overlaps within clans from file. Default is remove all overlaps" format="txt" multiple="false"/>
-    <param name="sortbit" type="select" value="" label="Sort hits by bit score __ob__default: sort by E-value__cb__" help="">
-      <option value="">Do not set this flag on the command line</option>
-      <option value="s">Set this flag on the command line</option>
+    <param name="sortbit" type="select" label="Sort hits by bit score" help="default is to sort by E-value" display="radio">
+      <option value="notset">Do not set this flag</option>
+      <option value="set">Set this flag</option>
     </param>
-    <param name="nhmmer" type="select" value="" label="Use this flag if your input files are from nhmmer v3.x" help="">
-      <option value="">Do not set this flag on the command line</option>
-      <option value="nhmmer">Set this flag on the command line</option>
+    <param name="maxkeep" type="select" label="Set this flag to keep hits that only overlap with other hits that are not kept " help="Default is to remove all hits with higher scoring overlap" display="radio">
+      <option value="notset">Do not set this flag</option>
+      <option value="set">Set this flag</option>
     </param>
-    <param name="hmmsearch" type="select" value="" label="Set this flag if your input files are from hmmsearch v3.x" help="">
-      <option value="">Do not set this flag on the command line</option>
-      <option value="hmmsearch">Set this flag on the command line</option>
-    </param>
-    <param name="cmscan" type="select" value="" label="Set this flag if your input files are from cmscan v1.1x, not cmsearch" help="">
-      <option value="">Do not set this flag on the command line</option>
-      <option value="cmscan">Set this flag on the command line</option>
-    </param>
-    <param name="maxkeep" type="select" value="" label="Set this flag to keep hits that only overlap with other hits that are not kept " help="Default is to remove all hits with higher scoring overlap">
-      <option value="">Do not set this flag on the command line</option>
-      <option value="maxkeep">Set this flag on the command line</option>
+    <param name="input_kind" type="select" label="Package used to generate the input tablescan data" help="cmsearch is the default">
+      <option value="">cmsearch (default)</option>
+      <option value="--nhhmer">nhhmer v3.x</option>
+      <option value="--hmmsearch">hmmsearch v3.x</option>
+      <option value="--cmscan">cmscan v1.1</option>
     </param>
   </inputs>
   <outputs>
-    <data name="overlapout" format="txt" label="History deoverlapped output" hidden="false"/>
+    <data name="overlapout" format="txt" label="CMsearchtblout output on $in_tblout.element_identifier" hidden="false"/>
   </outputs>
   <tests>
     <test>
       <output name="overlapout" value="overlapout_sample" compare="diff" lines_diff="10"/>
       <param name="in_tblout" value="in_tblout_sample"/>
       <param name="clanin" value="clanin_sample"/>
-      <param name="sortbit" value=""/>
-      <param name="nhmmer" value=""/>
-      <param name="hmmsearch" value=""/>
-      <param name="cmscan" value=""/>
-      <param name="maxkeep" value=""/>
+      <param name="sortbit" value="notset"/>
+      <param name="maxkeep" value="notset"/>
+      <param name="input_kind" value=""/>
     </test>
   </tests>
   <help><![CDATA[
